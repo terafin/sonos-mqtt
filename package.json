@@ -1,0 +1,28 @@
+{
+  "name": "sonos-mqtt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha .",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisns/sonos-mqtt.git"
+  },
+  "author": "Chris Nesbitt-Smith",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisns/sonos-mqtt/issues"
+  },
+  "homepage": "https://github.com/chrisns/sonos-mqtt#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.0",
+    "sonos-http-api": "github:jishi/node-sonos-http-api"
+  },
+  "devDependencies": {
+    "supertest": "^3.0.0"
+  }
+}
