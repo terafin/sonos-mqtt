@@ -7,7 +7,7 @@ pipeline:
 
   docker:
     image: plugins/docker
-    repo: sonos-mqtt
+    repo: chrisns/sonos-mqtt
     tags:
       - latest
       - ${DRONE_BUILD_NUMBER}
