@@ -1,0 +1,23 @@
+version: "3"
+services:
+  sonos:
+    image: chrisns/sonos-mqtt:${DRONE_BUILD_NUMBER:-latest}
+    networks:
+      - outside
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.40'
+          memory: 192M
+    environment:
+      - MQTT_HOST=${MQTT_HOST}
+      - MQTT_USER=${MQTT_USER}
+      - MQTT_PASS=${MQTT_PASS}
+      - MQTT_PREFIX=${MQTT_PREFIX}
+
+networks:
+  outside:
+    external:
+      name: "host"

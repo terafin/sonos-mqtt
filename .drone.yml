@@ -1,0 +1,22 @@
+pipeline:
+
+  build:
+    image: node
+    commands:
+      - npm --silent install
+
+  docker:
+    image: plugins/docker
+    repo: sonos-mqtt
+    tags:
+      - latest
+      - ${DRONE_BUILD_NUMBER}
+    secrets: [ docker_username, docker_password ]
+
+  deploy:
+    image: docker
+    secrets: [ MQTT_HOST, MQTT_USER, MQTT_PASS, MQTT_PREFIX ]
+    commands:
+      - docker deploy --compose-file docker-compose.yml sonos
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

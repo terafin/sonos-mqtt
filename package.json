@@ -18,11 +18,10 @@
   },
   "homepage": "https://github.com/chrisns/sonos-mqtt#readme",
   "dependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^3.5.0",
+    "mqtt": "^2.12.1",
+    "node-static": "^0.7.9",
+    "sonos-discovery": "github:jishi/node-sonos-discovery",
     "sonos-http-api": "github:jishi/node-sonos-http-api"
   },
-  "devDependencies": {
-    "supertest": "^3.0.0"
-  }
+  "devDependencies": {}
 }
