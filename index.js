@@ -10,7 +10,9 @@ const {MQTT_HOST, MQTT_USER, MQTT_PASS, MQTT_PREFIX} = process.env
 
 const client = mqtt.connect(MQTT_HOST, {
   username: MQTT_USER,
-  password: MQTT_PASS
+  password: MQTT_PASS,
+  clean: false,
+  clientId: "sonos"
 })
 
 client.on('connect', () => console.log("mqtt - connected"))
@@ -64,8 +66,8 @@ function SonosMQTTAPI(discovery, settings) {
 
   // this handles registering of all actions
   this.registerAction = (action, handler) => {
-    client.subscribe(`$share/sonos/${MQTT_PREFIX}${action}`, {qos: 1})
-    client.subscribe(`$share/sonos/${MQTT_PREFIX}${action}/#`, {qos: 1})
+    client.subscribe(`${MQTT_PREFIX}${action}`, {qos: 1})
+    client.subscribe(`${MQTT_PREFIX}${action}/#`, {qos: 1})
     actions[action] = handler
   }
 
