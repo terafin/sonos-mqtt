@@ -23,7 +23,7 @@ var settings = {
 };
 
 // load user settings
-const settingsFileFullPath = path.resolve(__dirname, 'settings.json');
+const settingsFileFullPath = path.resolve(__dirname, 'settings/settings.json');
 const userSettings = tryLoadJson(settingsFileFullPath);
 merge(settings, userSettings);
 
