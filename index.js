@@ -91,10 +91,11 @@ function SonosMQTTAPI(discovery, settings) {
             opt.values = JSON.parse(message.toString())
 
         } catch (e) {
-            if (message.toString().indexOf(',') !== -1)
-                opt.values = message.toString().split(',')
+            var mqttMessage = message.toString()
+            if (mqttMessage.indexOf(',') !== -1)
+                opt.values = mqttMessage.replace(' ', '+').split(',')
             else
-                opt.values = [message.toString()]
+                opt.values = [mqttMessage]
         }
 
         opt.action = params[0]
