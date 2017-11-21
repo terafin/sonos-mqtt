@@ -1,6 +1,6 @@
 FROM node:6-alpine
 
-RUN apk --no-cache add wget
+RUN apk add --no-cache git
 RUN mkdir /app
 WORKDIR /app
 COPY . .
