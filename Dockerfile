@@ -1,8 +1,10 @@
 FROM node:6-alpine
 
-RUN apk add --no-cache git
-RUN mkdir /app
+RUN mkdir -p /app
+COPY . /app
 WORKDIR /app
-COPY . .
+RUN apk add --no-cache git
+
+RUN npm install --production
 
 CMD npm start
