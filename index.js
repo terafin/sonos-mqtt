@@ -6,7 +6,7 @@ const http = require('http')
 const requireDir = require('sonos-http-api/lib/helpers/require-dir')
 const path = require('path')
 const mqtt = require('mqtt')
-const { MQTT_HOST, MQTT_USER, MQTT_PASS, MQTT_PREFIX } = process.env
+const { MQTT_HOST, MQTT_USER, MQTT_PASS, MQTT_PREFIX, API_PORT } = process.env
 
 const client = mqtt.connect(MQTT_HOST, {
     username: MQTT_USER,
@@ -27,13 +27,13 @@ const discovery = new SonosSystem(settings)
 
 function SonosMQTTAPI(discovery, settings) {
 
-    const port = settings.port
+    const port = API_PORT
     const webroot = settings.webroot
     const actions = {}
 
     this.getWebRoot = () => webroot
 
-    this.getPort = () => port
+    this.getPort = () => API_PORT
 
     this.discovery = discovery
 
@@ -158,7 +158,7 @@ const file = new nodeStatic.Server(settings.webroot)
 
 http.createServer((request, response) =>
     request.addListener('end', () => file.serve(request, response)).resume()
-).listen(settings.port)
+).listen(API_PORT)
 
 client.on('message', api.requestHandler)
 
