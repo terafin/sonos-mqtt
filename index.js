@@ -15,13 +15,13 @@ const client = mqtt.connect(MQTT_HOST, {
     clientId: 'sonos'
 })
 
-client.on('connect', () => console.log('mqtt - connected'))
+client.on('connect', () => console.log('MQTT - connected'))
 
-client.on('error', (error) => console.error('mqtt - error', error))
+client.on('error', (error) => console.error('MQTT - error', error))
 
-client.on('close', () => console.error('mqtt - connection close'))
+client.on('close', () => console.error('MQTT - connection close'))
 
-client.on('offline', () => console.log('mqtt - offline'))
+client.on('offline', () => console.log('MQTT - offline'))
 
 const discovery = new SonosSystem(settings)
 
