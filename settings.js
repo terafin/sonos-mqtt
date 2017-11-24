@@ -15,7 +15,7 @@ function merge(target, source) {
 }
 
 var settings = {
-    port: 5005,
+    port: process.env.INTERNAL_PORT,
     cacheDir: path.resolve(__dirname, 'cache'),
     webroot: path.resolve(__dirname, 'static'),
     presetDir: path.resolve(__dirname, 'presets'),
