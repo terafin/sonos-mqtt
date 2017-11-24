@@ -28,6 +28,7 @@ const userSettings = tryLoadJson(settingsFileFullPath)
 merge(settings, userSettings)
 
 logger.debug(settings)
+logging.info('using settings:')
 
 if (!fs.existsSync(settings.webroot + '/tts/')) {
     fs.mkdirSync(settings.webroot + '/tts/')
