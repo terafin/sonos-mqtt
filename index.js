@@ -26,7 +26,6 @@ const discovery = new SonosSystem(settings)
 
 function SonosMQTTAPI(discovery, settings) {
 
-    const port = API_PORT
     const webroot = settings.webroot
     const actions = {}
 
