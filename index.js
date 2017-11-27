@@ -1,5 +1,4 @@
 const SonosSystem = require('sonos-discovery')
-const SonosHttpAPI = require('sonos-http-api/lib/sonos-http-api.js')
 const settings = require('sonos-http-api/settings')
 const nodeStatic = require('node-static')
 const http = require('http')
