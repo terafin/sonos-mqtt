@@ -5,6 +5,8 @@ const http = require('http')
 const requireDir = require('sonos-http-api/lib/helpers/require-dir')
 const path = require('path')
 const mqtt = require('mqtt')
+const _ = require('lodash')
+
 require('homeautomation-js-lib/mqtt_helpers.js')
 
 var shouldRetain = process.env.MQTT_RETAIN
