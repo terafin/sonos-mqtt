@@ -10,6 +10,7 @@ const _ = require('lodash')
 require('homeautomation-js-lib/mqtt_helpers.js')
 
 var shouldRetain = process.env.MQTT_RETAIN
+const MQTT_PREFIX = process.env.MQTT_PREFIX
 
 if (_.isNil(shouldRetain)) {
     shouldRetain = true
