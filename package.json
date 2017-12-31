@@ -18,7 +18,7 @@
     },
     "homepage": "https://github.com/chrisns/sonos-mqtt#readme",
     "dependencies": {
-        "mqtt": "^2.12.1",
+        "mqtt": "^2.15.0",
         "node-static": "^0.7.9",
         "sonos-discovery": "git://github.com/jishi/node-sonos-discovery",
         "sonos-http-api": "git://github.com/jishi/node-sonos-http-api"
