@@ -5,22 +5,17 @@ const http = require('http')
 const requireDir = require('sonos-http-api/lib/helpers/require-dir')
 const path = require('path')
 const mqtt = require('mqtt')
-const { MQTT_HOST, MQTT_USER, MQTT_PASS, MQTT_PREFIX, API_PORT } = process.env
+require('homeautomation-js-lib/mqtt_helpers.js')
 
-const client = mqtt.connect(MQTT_HOST, {
-    username: MQTT_USER,
-    password: MQTT_PASS,
-    clean: false,
-    clientId: 'sonos'
-})
+var shouldRetain = process.env.MQTT_RETAIN
 
-client.on('connect', () => console.log('MQTT - connected'))
+if (_.isNil(shouldRetain)) {
+    shouldRetain = true
+}
 
-client.on('error', (error) => console.error('MQTT - error', error))
+var mqttOptions = {}
 
-client.on('close', () => console.error('MQTT - connection close'))
-
-client.on('offline', () => console.log('MQTT - offline'))
+var client = mqtt.setupClient(null, null)
 
 const discovery = new SonosSystem(settings)
 
