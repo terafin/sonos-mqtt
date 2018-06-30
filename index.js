@@ -133,6 +133,7 @@ const sendResponse = body => {
     client.publish(`${MQTT_PREFIX}out`, JSON.stringify(body), { qos: 1 })
     console.log(body)
 }
+
 const tryLoadJson = require('sonos-http-api/lib/helpers/try-load-json')
 
 function merge(target, source) {
