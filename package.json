@@ -19,7 +19,7 @@
     "homepage": "https://github.com/chrisns/sonos-mqtt#readme",
     "dependencies": {
         "mqtt": "latest",
-        "homeautomation-js-lib": "git+https://gitlab.siliconspirit.net/home/homeautomation-js-lib.git",
+        "homeautomation-js-lib": "https://github.com/terafin/homeautomation-js-lib.git",
         "lodash": "^4.17.15",
         "node-static": "latest",
         "sonos-discovery": "git://github.com/jishi/node-sonos-discovery",
