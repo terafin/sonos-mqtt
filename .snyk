@@ -1,0 +1,25 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:hoek:20180212':
+    - node-sonos-http-api > anesidora > request > hawk > hoek:
+        patched: '2020-03-01T19:03:34.869Z'
+    - node-sonos-http-api > request-promise > request > hawk > hoek:
+        patched: '2020-03-01T19:03:34.869Z'
+    - node-sonos-http-api > anesidora > request > hawk > boom > hoek:
+        patched: '2020-03-01T19:03:34.869Z'
+    - node-sonos-http-api > request-promise > request > hawk > boom > hoek:
+        patched: '2020-03-01T19:03:34.869Z'
+    - node-sonos-http-api > anesidora > request > hawk > sntp > hoek:
+        patched: '2020-03-01T19:03:34.869Z'
+    - node-sonos-http-api > request-promise > request > hawk > sntp > hoek:
+        patched: '2020-03-01T19:03:34.869Z'
+    - node-sonos-http-api > anesidora > request > hawk > cryptiles > boom > hoek:
+        patched: '2020-03-01T19:03:34.869Z'
+    - node-sonos-http-api > request-promise > request > hawk > cryptiles > boom > hoek:
+        patched: '2020-03-01T19:03:34.869Z'
+  'npm:lodash:20180130':
+    - node-sonos-http-api > request-promise > lodash:
+        patched: '2020-03-01T19:03:34.869Z'
